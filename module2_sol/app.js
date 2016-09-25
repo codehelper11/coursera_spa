@@ -10,9 +10,10 @@
 
     function ToBuyShoppingController($scope,ShoppingListCheckOffService){
 
-        $scope.toBuyList = ShoppingListCheckOffService.getBuyList();
+        var toBuy = this;
+        toBuy.toBuyList = ShoppingListCheckOffService.getBuyList();
 
-        $scope.moveToBoughtList = function(index){
+        toBuy.moveToBoughtList = function(index){
             ShoppingListCheckOffService.removeFromBuyAndAddToBoughtList(index);
 
         }
@@ -21,8 +22,8 @@
     AlreadyBoughtShoppingController.$inject = ['$scope','ShoppingListCheckOffService'];
 
     function AlreadyBoughtShoppingController($scope,ShoppingListCheckOffService){
-
-        $scope.boughtList = ShoppingListCheckOffService.getBoughtList();
+        var bought = this;
+        bought.boughtList = ShoppingListCheckOffService.getBoughtList();
 
     }
 
